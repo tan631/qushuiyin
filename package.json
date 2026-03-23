@@ -24,10 +24,13 @@
   },
   "homepage": "https://github.com/tan631/qushuiyin#readme",
   "dependencies": {
+    "@auth/prisma-adapter": "^2.11.1",
     "@prisma/client": "^7.5.0",
     "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
     "autoprefixer": "^10.4.27",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.0.1",
     "next": "^16.2.1",
     "next-auth": "^5.0.0-beta.30",
     "next-intl": "^4.8.3",
@@ -35,6 +38,7 @@
     "prisma": "^7.5.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3"
   }
