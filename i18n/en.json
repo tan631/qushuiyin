@@ -1,0 +1,36 @@
+{
+  "home": {
+    "title": "Cross-Platform Content Extractor",
+    "subtitle": "Support YouTube, TikTok, Twitter and more",
+    "placeholder": "Paste video/post link...",
+    "extract": "Extract",
+    "login": "Login",
+    "logout": "Logout",
+    "profile": "Profile"
+  },
+  "platforms": {
+    "youtube": "YouTube",
+    "tiktok": "TikTok",
+    "twitter": "Twitter"
+  },
+  "auth": {
+    "googleLogin": "Login with Google",
+    "phoneLogin": "Login with Phone",
+    "phone": "Phone Number",
+    "code": "Verification Code",
+    "sendCode": "Send Code",
+    "verify": "Verify"
+  },
+  "result": {
+    "video": "Video",
+    "text": "Text",
+    "download": "Download Video",
+    "copy": "Copy Text",
+    "copied": "Copied"
+  },
+  "history": {
+    "title": "Extraction History",
+    "retry": "Retry",
+    "delete": "Delete"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "home": {
+    "title": "跨平台内容提取器",
+    "subtitle": "支持 YouTube、TikTok、Twitter 等平台",
+    "placeholder": "粘贴视频/帖子链接...",
+    "extract": "提取",
+    "login": "登录",
+    "logout": "退出登录",
+    "profile": "个人中心"
+  },
+  "platforms": {
+    "youtube": "YouTube",
+    "tiktok": "TikTok",
+    "twitter": "Twitter"
+  },
+  "auth": {
+    "googleLogin": "使用 Google 登录",
+    "phoneLogin": "手机号登录",
+    "phone": "手机号",
+    "code": "验证码",
+    "sendCode": "获取验证码",
+    "verify": "验证登录"
+  },
+  "result": {
+    "video": "视频",
+    "text": "文案",
+    "download": "下载视频",
+    "copy": "复制文案",
+    "copied": "已复制"
+  },
+  "history": {
+    "title": "提取历史",
+    "retry": "重新提取",
+    "delete": "删除"
+  }
+}
