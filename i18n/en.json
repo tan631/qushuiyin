@@ -1,8 +1,8 @@
 {
   "home": {
-    "title": "Cross-Platform Content Extractor",
-    "subtitle": "Support YouTube, TikTok, Twitter and more",
-    "placeholder": "Paste video/post link...",
+    "title": "Watermark Remover",
+    "subtitle": "Extract TikTok, YouTube, Twitter videos & captions without watermarks",
+    "placeholder": "Paste video link...",
     "extract": "Extract",
     "login": "Login",
     "logout": "Logout",
@@ -23,9 +23,9 @@
   },
   "result": {
     "video": "Video",
-    "text": "Text",
+    "text": "Caption",
     "download": "Download Video",
-    "copy": "Copy Text",
+    "copy": "Copy Caption",
     "copied": "Copied"
   },
   "history": {

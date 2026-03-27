@@ -1,13 +1,8 @@
 import { execSync } from 'child_process';
 
-export async function extractTwitter(url: string) {
+export async function extractTwitter(url: string, extractType: string = 'both') {
   const tweetId = url.match(/status\/(\d+)/)?.[1];
   if (!tweetId) throw new Error('Invalid Twitter/X URL');
-
-  // 用 yt-dlp 获取推文视频信息
-  let videoUrl = null;
-  let videoThumbnail = null;
-  let metadata: any = { tweetId };
 
   try {
     const infoJson = execSync(
@@ -17,27 +12,34 @@ export async function extractTwitter(url: string) {
     const info = JSON.parse(infoJson);
 
     const formats: any[] = info.formats || [];
-    const bestFormat = formats
-      .filter((f: any) => f.vcodec !== 'none' && f.acodec !== 'none')
-      .sort((a: any, b: any) => (b.height || 0) - (a.height || 0))[0];
+    const qualities = [];
+    
+    if (extractType === 'video' || extractType === 'both') {
+      const videoFormats = formats
+        .filter((f: any) => f.vcodec !== 'none' && f.acodec !== 'none')
+        .sort((a: any, b: any) => (b.height || 0) - (a.height || 0));
+      
+      if (videoFormats.length > 0) {
+        videoFormats.slice(0, 3).forEach((f: any) => {
+          qualities.push({ label: `${f.height}p`, value: f.format_id, url: f.url });
+        });
+      }
+    }
 
-    videoUrl = bestFormat?.url || info.url;
-    videoThumbnail = info.thumbnail;
-    metadata = {
-      tweetId,
-      title: info.title,
+    return {
+      platform: 'Twitter',
+      title: info.title || 'Twitter Video',
       author: info.uploader,
-      duration: info.duration,
+      duration: info.duration ? `${Math.floor(info.duration / 60)}:${String(info.duration % 60).padStart(2, '0')}` : undefined,
+      videoUrl: url,
+      textContent: extractType === 'text' || extractType === 'both' ? info.description : undefined,
+      qualities: qualities.length > 0 ? qualities : [{ label: 'Default', value: 'best', url: undefined }],
+      metadata: {
+        thumbnail: info.thumbnail,
+        tweetId,
+      }
     };
-  } catch {
-    // 推文可能没有视频，只有文字
+  } catch (error: any) {
+    throw new Error(`Twitter extraction failed: ${error.message}`);
   }
-
-  return {
-    platform: 'twitter',
-    videoUrl,
-    videoThumbnail,
-    textContent: null,
-    metadata,
-  };
 }

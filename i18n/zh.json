@@ -1,8 +1,8 @@
 {
   "home": {
-    "title": "跨平台内容提取器",
-    "subtitle": "支持 YouTube、TikTok、Twitter 等平台",
-    "placeholder": "粘贴视频/帖子链接...",
+    "title": "跨平台去水印工具",
+    "subtitle": "一键提取 TikTok、YouTube、Twitter 无水印视频和文案",
+    "placeholder": "粘贴视频链接...",
     "extract": "提取",
     "login": "登录",
     "logout": "退出登录",
@@ -24,7 +24,7 @@
   "result": {
     "video": "视频",
     "text": "文案",
-    "download": "下载视频",
+    "download": "下载无水印视频",
     "copy": "复制文案",
     "copied": "已复制"
   },
